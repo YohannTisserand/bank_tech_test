@@ -8,9 +8,3 @@ class Account
     @balance += amount
   end
 end
-
-
-
-def withdraw(amount)
-    @balance -= amount
-  end
