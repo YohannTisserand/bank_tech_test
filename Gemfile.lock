@@ -10,6 +10,7 @@ GEM
     parser (3.0.1.1)
       ast (~> 2.4.1)
     rainbow (3.0.0)
+    rake (13.0.3)
     rspec (3.10.0)
       rspec-core (~> 3.10.0)
       rspec-expectations (~> 3.10.0)
@@ -50,6 +51,7 @@ PLATFORMS
   x86_64-darwin-20
 
 DEPENDENCIES
+  rake (~> 13.0)
   rspec (~> 3.10)
   rspec-core (~> 3.10)
   rubocop (= 0.79.0)

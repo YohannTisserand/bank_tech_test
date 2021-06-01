@@ -12,3 +12,5 @@ gem "simplecov", "~> 0.21.2"
 gem "simplecov-console", "~> 0.9.1"
 
 gem "rspec-core", "~> 3.10"
+
+gem "rake", "~> 13.0"
