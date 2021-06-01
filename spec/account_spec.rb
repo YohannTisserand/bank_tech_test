@@ -17,4 +17,9 @@ describe Account do
     account.withdraw(100)
     expect(account.balance).to eq 100
   end
+
+  it 'raises an error if withdraw without enough funds' do
+    account.deposit(100)
+    expect { account.withdraw(200) }.to raise_error "Not enough funds"
+  end
 end

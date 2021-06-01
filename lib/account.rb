@@ -10,13 +10,13 @@ class Account
   end
 
   def withdraw(amount)
-    low_funds(amount)
     @balance -= amount
+    low_funds(amount)
   end
 
   private
 
   def low_funds(amount)
-    raise "Not enough funds" unless @balance - amount > 0
+    raise "Not enough funds" unless @balance - amount >= 0
   end
 end
