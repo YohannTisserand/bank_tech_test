@@ -9,6 +9,12 @@ describe Account do
 
   it 'should change if a deposit has been made' do
     account.deposit(200)
-    expect(subject.balance).to eq 200
+    expect(account.balance).to eq 200
+  end
+
+  it 'should change if a withdraw has been made' do
+    account.deposit(200)
+    account.withdraw(100)
+    expect(account.balance).to eq 100
   end
 end
