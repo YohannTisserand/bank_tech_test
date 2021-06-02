@@ -1,10 +1,17 @@
 class Transaction
 
-  def initialize
-    @date = Time.now.strftime('%d/%m/%Y') 
+  def initialize(credit: nil, debit: nil)
+    @date = Time.now.strftime('%d/%m/%Y')
+    @credit = credit
   end
 
   def print_logs
-   "#{@date} || || ||"
+    "#{@date} || #{spaced(@credit)}|| || "
+  end
+
+  private
+
+  def spaced(item)
+    "#{item} " if item
   end
 end
