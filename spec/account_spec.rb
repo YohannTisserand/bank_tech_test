@@ -34,16 +34,22 @@ describe Account do
     end
   end
 
+  context '#statement' do
+    it 'should output the statement' do
+      allow(subject.statement).to receive(:print).twice
+      subject.statement
+    end
+  end
+
   context '#transactions_class' do
-    
-    it 'allow a deposit' do
+    it 'allows a deposit' do
       transaction_class = double(:transaction_class, new: :transaction)
       subject = described_class.new(transaction_class: transaction_class)
       expect(transaction_class).to receive(:new).with(credit: 100, balance: 100)
       subject.deposit(100)
     end
 
-    it 'allow a withdraw' do
+    it 'allows a withdraw' do
       transaction_class = double(:transaction_class, new: :transaction)
       subject = described_class.new(transaction_class: transaction_class)
       subject.deposit(1000)

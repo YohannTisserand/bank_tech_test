@@ -24,6 +24,12 @@ class Account
     current_balance_output
   end
 
+  def statement
+    output = @transaction_history.reverse.map(&:print_logs).join("\n")
+    print "date || credit || debit || balance\n"
+    print output
+  end
+
   private
 
   def check_low_funds(debit)
