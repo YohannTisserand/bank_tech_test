@@ -8,6 +8,7 @@ class Transaction
   end
 
   def print_logs
+    "date || credit || debit || balance\n" +
     "#{@date} || #{spaced(@credit)}|| #{spaced(@debit)}|| #{spaced(@balance)}"
   end
 
