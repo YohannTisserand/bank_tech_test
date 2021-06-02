@@ -1,5 +1,6 @@
 # Bank_tech_test
 [![Build Status](https://travis-ci.com/YohannTisserand/bank_tech_test.svg?branch=main)](https://travis-ci.com/YohannTisserand/bank_tech_test)
+[![BCH compliance](https://bettercodehub.com/edge/badge/YohannTisserand/bank_tech_test?branch=main)](https://bettercodehub.com/)
 
 ### Acceptance criteria
 
