@@ -1,25 +1,27 @@
 require 'account'
 
 describe Account do
-  subject(:account) { described_class.new }
-
   it 'should start empty' do
-    expect(account.balance).to eq 0
+    expect(subject.balance).to eq Account::DEFAULT_BALANCE
   end
 
   it 'should change if a deposit has been made' do
-    account.deposit(200)
-    expect(account.balance).to eq 200
+    subject.deposit(200)
+    expect(subject.balance).to eq 200
   end
 
   it 'should change if a withdraw has been made' do
-    account.deposit(200)
-    account.withdraw(100)
-    expect(account.balance).to eq 100
+    subject.deposit(200)
+    subject.withdraw(100)
+    expect(subject.balance).to eq 100
   end
 
   it 'raises an error if withdraw without enough funds' do
-    account.deposit(100)
-    expect { account.withdraw(200) }.to raise_error "Not enough funds"
+    subject.deposit(100)
+    expect { subject.withdraw(200) }.to raise_error "Not enough funds"
+  end
+
+  it 'prints the header' do
+    expect(subject.header).to eq 'date || credit || debit || balance'
   end
 end
