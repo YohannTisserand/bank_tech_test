@@ -15,6 +15,21 @@ date || credit || debit || balance
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
 ```
+## How to install
+
+```
+clone the repository
+https://github.com/YohannTisserand/bank_tech_test.git
+
+- Install the dependencies
+bundle install
+
+- Run the test
+Rspec
+
+Play around
+
+```
 ## User Story
 ```
 as a user
