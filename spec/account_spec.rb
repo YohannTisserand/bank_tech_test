@@ -2,20 +2,20 @@ require 'account'
 
 describe Account do
 
-  context '#initialize' do
+  context 'balance should start at 0' do
     it 'should start empty' do
       expect(subject.balance).to eq Account::DEFAULT_BALANCE
     end
   end
 
-  context '#deposit' do
+  context 'when a deposit has been made' do
     it 'should change if a deposit has been made' do
       subject.deposit(200)
       expect(subject.balance).to eq 200
     end
   end
 
-  context 'withdraw' do
+  context 'a user withdraw some cash' do
     it 'should change if a withdraw has been made' do
       subject.deposit(200)
       subject.withdraw(100)
@@ -23,7 +23,7 @@ describe Account do
     end
   end
 
-  context '#raise_errors' do
+  context 'raise error against unexpected behavior' do
     it 'raises an error if withdraw without enough funds' do
       subject.deposit(100)
       expect { subject.withdraw(200) }.to raise_error "Not enough funds"
@@ -34,14 +34,14 @@ describe Account do
     end
   end
 
-  context '#statement' do
+  context 'a user wants to print a statement' do
     it 'should output the statement' do
       allow(subject.statement).to receive(:print).twice
       subject.statement
     end
   end
 
-  context '#transactions_class' do
+  context 'a user wants to make a transaction' do
     it 'allows a deposit' do
       transaction_class = double(:transaction_class, new: :transaction)
       subject = described_class.new(transaction_class: transaction_class)
