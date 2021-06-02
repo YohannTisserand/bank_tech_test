@@ -32,4 +32,4 @@ so I can keep track of my bank account
 I would like to be able to print a bank statement
 ```
 ## Snapshot
-![](../public/Screen Recording 2021-06-02 at 12.27.17.gif)
+<img src="/public/Screen Recording 2021-06-02 at 12.27.17.gif">
