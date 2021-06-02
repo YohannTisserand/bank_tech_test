@@ -29,7 +29,7 @@ describe Account do
       expect { subject.withdraw(200) }.to raise_error "Not enough funds"
     end
 
-    it 'raises an error if depositis nil' do
+    it 'raises an error if deposit is nil' do
       expect { subject.deposit(0) }.to raise_error "must be at least £1"
     end
   end
