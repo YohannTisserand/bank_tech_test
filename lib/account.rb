@@ -23,10 +23,6 @@ class Account
     make_withdraw(debit: debit, balance: @balance)
   end
 
-  def print
-    new_array= @transaction_history.map(&:print_logs)
-  end
-
   private
 
   def check_low_funds(debit)
