@@ -15,3 +15,19 @@ date || credit || debit || balance
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
 ```
+
+```
+as a user
+so I can top up my bank account
+I would like to make a deposit
+```
+```
+as a user
+so I can buy things
+I would like to withdraw some cash
+```
+```
+as a user
+so I can keep track of my bank account
+I would like to be able to print a bank statement
+```
