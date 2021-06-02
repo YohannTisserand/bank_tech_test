@@ -33,4 +33,22 @@ describe Account do
       expect { subject.deposit(0) }.to raise_error "must be at least £1"
     end
   end
+
+  context '#transactions_class' do
+    
+    it 'allow a deposit' do
+      transaction_class = double(:transaction_class, new: :transaction)
+      subject = described_class.new(transaction_class: transaction_class)
+      expect(transaction_class).to receive(:new).with(credit: 100, balance: 100)
+      subject.deposit(100)
+    end
+
+    it 'allow a withdraw' do
+      transaction_class = double(:transaction_class, new: :transaction)
+      subject = described_class.new(transaction_class: transaction_class)
+      subject.deposit(1000)
+      expect(transaction_class).to receive(:new).with(debit: 100, balance: 900)
+      subject.withdraw(100)
+    end
+  end
 end

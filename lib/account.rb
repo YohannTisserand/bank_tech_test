@@ -11,22 +11,39 @@ class Account
   end
 
   def deposit(credit)
-    low_deposit(credit)
-    @transaction_history << @balance += credit
+    check_low_deposit(credit)
+    @balance += credit
+    make_deposit(credit: credit, balance: @balance)
+    
   end
 
   def withdraw(debit)
-    low_funds(debit)
-    @transaction_history <<  @balance -= debit
+    check_low_funds(debit)
+    @balance -= debit
+    make_withdraw(debit: debit, balance: @balance)
+  end
+
+  def print
+    new_array= @transaction_history.map(&:print_logs)
   end
 
   private
 
-  def low_funds(debit)
+  def check_low_funds(debit)
     raise "Not enough funds" unless @balance - debit >= DEFAULT_BALANCE
   end
 
-  def low_deposit(credit)
+  def check_low_deposit(credit)
     raise "must be at least £1" if credit == DEFAULT_BALANCE
+  end
+
+  def make_deposit(credit: nil, balance: nil)
+    deposit = @transaction_class.new(credit: credit, balance: balance)
+    @transaction_history.push(deposit)
+  end
+  
+  def make_withdraw(debit: nil, balance: nil)
+    withdraw = @transaction_class.new(debit: debit, balance: balance)
+    @transaction_history.push(withdraw)
   end
 end
