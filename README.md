@@ -38,7 +38,6 @@ Rspec
 
 Play around
 
-```
 ## User Story
 ```
 as a user
