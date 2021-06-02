@@ -19,15 +19,22 @@ date || credit || debit || balance
 ```
 ## How to install
 
-```
 clone the repository
+
+```
 https://github.com/YohannTisserand/bank_tech_test.git
+```
 
-- Install the dependencies
+Install the dependencies
+
+```
 bundle install
+```
+Run the test
 
-- Run the test
+```
 Rspec
+```
 
 Play around
 
