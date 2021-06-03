@@ -8,7 +8,11 @@ class Transaction
   end
 
   def print_logs
-    "#{@date} || #{spaced(@credit)}|| #{spaced(@debit)}|| #{spaced(@balance)}"
+    "#{@date} || #{spaced(format(@credit))}|| #{spaced(format(@debit))}|| #{spaced(format(@balance))}"
+  end
+
+  def format(item)
+    '%.2f' % item if !item.nil?
   end
 
   private
