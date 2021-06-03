@@ -1,4 +1,5 @@
 require_relative 'transaction'
+# require_relative 'printer'
 
 class Account
   DEFAULT_BALANCE = 0
@@ -14,14 +15,14 @@ class Account
     check_low_deposit(credit)
     @balance += credit
     make_deposit(credit: credit, balance: @balance)
-    current_balance_output
+    @balance
   end
 
   def withdraw(debit)
     check_low_funds(debit)
     @balance -= debit
     make_withdraw(debit: debit, balance: @balance)
-    current_balance_output
+    @balance
   end
 
   def statement
@@ -38,10 +39,6 @@ class Account
 
   def check_low_deposit(credit)
     raise "must be at least £1" if credit == DEFAULT_BALANCE
-  end
-
-  def current_balance_output
-    "You have £#{@balance} on your account"
   end
 
   def make_deposit(credit: nil, balance: nil)
