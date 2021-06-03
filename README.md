@@ -39,7 +39,7 @@ Rspec
 
 Play around
 
-## User Story
+## User Stories
 ```
 as a user
 so I can top up my bank account
