@@ -11,17 +11,17 @@ class Account
     @transaction_history = []
   end
 
-  def deposit(credit)
-    check_low_deposit(credit)
-    @balance += credit
-    make_deposit(credit: credit, balance: @balance)
+  def deposit(amount)
+    check_low_deposit(amount)
+    @balance += amount
+    make_deposit(amount: amount, balance: @balance)
     @balance
   end
 
-  def withdraw(debit)
-    check_low_funds(debit)
-    @balance -= debit
-    make_withdraw(debit: debit, balance: @balance)
+  def withdraw(amount)
+    check_low_funds(amount)
+    @balance -= amount
+    make_withdraw(amount: amount, balance: @balance)
     @balance
   end
 
@@ -33,21 +33,21 @@ class Account
 
   private
 
-  def check_low_funds(debit)
-    raise "Not enough funds" unless @balance - debit >= DEFAULT_BALANCE
+  def check_low_funds(amount)
+    raise "Not enough funds" unless @balance - amount >= DEFAULT_BALANCE
   end
 
-  def check_low_deposit(credit)
-    raise "must be at least £1" if credit == DEFAULT_BALANCE
+  def check_low_deposit(amount)
+    raise "must be at least £1" if amount == DEFAULT_BALANCE
   end
 
-  def make_deposit(credit: nil, balance: nil)
-    deposit = @transaction_class.new(credit: credit, balance: balance)
+  def make_deposit(amount: nil, balance: nil)
+    deposit = @transaction_class.new(amount: amount, balance: balance)
     @transaction_history.push(deposit)
   end
   
-  def make_withdraw(debit: nil, balance: nil)
-    withdraw = @transaction_class.new(debit: debit, balance: balance)
+  def make_withdraw(amount: nil, balance: nil)
+    withdraw = @transaction_class.new(amount: amount, balance: balance)
     @transaction_history.push(withdraw)
   end
 end
