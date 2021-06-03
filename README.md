@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.com/YohannTisserand/bank_tech_test.svg?branch=main)](https://travis-ci.com/YohannTisserand/bank_tech_test)
 [![BCH compliance](https://bettercodehub.com/edge/badge/YohannTisserand/bank_tech_test?branch=main)](https://bettercodehub.com/)
 
+[How to install](#how-to-install) | [User Stories](#user-stories) | [Snapshot](#snapshot)
 ### Acceptance criteria
 
 **Given** a client makes a deposit of 1000 on 10-01-2012  
@@ -19,7 +20,7 @@ date || credit || debit || balance
 ```
 ## How to install
 
-clone the repository
+Clone the repository
 
 ```
 https://github.com/YohannTisserand/bank_tech_test.git
