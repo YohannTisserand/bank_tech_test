@@ -1,6 +1,5 @@
 # Bank_tech_test
 [![Maintainability](https://api.codeclimate.com/v1/badges/17ff4c30baac35cd094c/maintainability)](https://codeclimate.com/github/YohannTisserand/bank_tech_test/maintainability)
-[![Build Status](https://travis-ci.com/YohannTisserand/bank_tech_test.svg?branch=main)](https://travis-ci.com/YohannTisserand/bank_tech_test)
 [![BCH compliance](https://bettercodehub.com/edge/badge/YohannTisserand/bank_tech_test?branch=main)](https://bettercodehub.com/)
 
 [How to install](#how-to-install) | [User Stories](#user-stories) | [Snapshot](#snapshot)
